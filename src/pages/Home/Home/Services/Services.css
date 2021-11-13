@@ -1,0 +1,13 @@
+.service h1:hover{
+    color: #dcc397
+}
+.service p:hover{
+    color: #dcc397
+}
+.service span{
+    font-size: 20px;
+}
+.service-img img{
+    display: block;
+    height: 300px;
+}

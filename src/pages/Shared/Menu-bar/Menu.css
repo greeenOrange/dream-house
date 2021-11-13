@@ -1,0 +1,13 @@
+.top-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-button{
+    display: flex;
+    justify-content: end;
+}
+.top-menu a{
+    text-decoration: none;
+    padding: .1rem .3rem;
+}

@@ -1,0 +1,63 @@
+[
+	{
+        "img": "https://i.ibb.co/CB7ZqwJ/Luxurious-modern-villa-with-garden-3d-rendering.jpg",
+		"name": "Abolire",
+		"area": "560 square feets",
+		"worth": "20,533,000",
+		"catefory": "modern house"
+	},
+	{   "img":"https://i.ibb.co/Njk74np/This-is-a-single-family-home-that-is-new-construction-cottage-style-house-with-hardy-board-and-a-par.jpg",
+		"name": "Paradise",
+		"area": "1243 square feets",
+		"worth": "60,999,000",
+		"catefory": "Palace"
+	},
+	{   "img":"https://i.ibb.co/31zFBK8/znxv-Qanl-IFT15r-CRWo3-SQs-Tgi-YFz-EMYlej-Bm5-ZOLXE-p-KOcn-Tojll8-GEq-THZg-TBRh-AOKa-G-M7i-z-ENhm-MD.jpg",
+		"name": "Monterey",
+		"area": "544 square feets",
+		"worth": "19,783,000",
+		"catefory": "Tree house"
+	},
+	{   "img":"https://i.ibb.co/31zFBK8/znxv-Qanl-IFT15r-CRWo3-SQs-Tgi-YFz-EMYlej-Bm5-ZOLXE-p-KOcn-Tojll8-GEq-THZg-TBRh-AOKa-G-M7i-z-ENhm-MD.jpg",
+		"name": "sea Breeze",
+		"area": "500 square feets",
+		"worth": "20,533,000",
+		"catefory": "Cottage"
+	},
+	{   "img":"https://i.ibb.co/hX0QBV7/02C.jpg",
+		"name": "sunrise",
+		"area": "510 square feets",
+		"worth": "31,541,000",
+		"catefory": "Palace"
+	},
+	{   "img":"https://i.ibb.co/zHZ8r4X/c-383-424c8f5e-f25e-410a-949d-46fbfa2f2326.jpg",
+		"name": "vista",
+		"area": "460 square feets",
+		"worth": "34,223,000",
+		"catefory": "Bungalow"
+	},
+	{   "img":"https://i.ibb.co/nPvm3BV/be6757f0afd78b2c78bd926efdbfb1c2.jpg",
+		"name": "evernest",
+		"area": "670 square feets",
+		"worth": "38,233,000",
+		"catefory": "Container Home"
+	},
+	{   "img":"https://i.ibb.co/n6s8Vks/types-of-homes-hero.jpg",
+		"name": "oakside realty",
+		"area": "812 square feets",
+		"worth": "40,103,000",
+		"catefory": "Underground House"
+	},
+    {   "img":"https://i.ibb.co/dj4zVmr/fe298a70a49d93f50c62ae40c5ecce3a.jpg",
+		"name": "rose realty",
+		"area": "931 square feets",
+		"worth": "43,233,000",
+		"catefory": "Coach house"
+	},
+	{   "img":"https://i.ibb.co/0FrqtNr/4aa955a400be6c95a34a61bb0094ba35.jpg",
+		"name": "south glendale",
+		"area": "1254 square feets",
+		"worth": "43,603,000",
+		"catefory": "Mansion"
+	}
+]

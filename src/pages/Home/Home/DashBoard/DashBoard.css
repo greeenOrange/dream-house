@@ -1,0 +1,10 @@
+  .dashboard-menu {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .dashboard-menu a{
+    text-decoration: none;
+  };
+  .dashboard-menu:hover {
+    color: cyan;
+  }
