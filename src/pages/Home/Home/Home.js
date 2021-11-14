@@ -1,16 +1,18 @@
 import React from 'react';
 import Footer from '../../Footer/Footer';
+import PropertyAmenities from '../../PropertyAmenities/PropertyAmenities';
+import ReviewShow from '../../ReviewShow/ReviewShow';
 import Banner from '../Banner/Banner';
 import LimitServices from '../LimitServices/LimitServices';
-import Review from '../Review/Review';
-import Services from './Services/Services';
+
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <LimitServices></LimitServices>
-            <Review></Review>
+            <PropertyAmenities></PropertyAmenities>
+            <ReviewShow></ReviewShow>
             <Footer></Footer>
         </div>
     );

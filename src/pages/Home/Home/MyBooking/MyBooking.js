@@ -13,10 +13,11 @@ const {user} = useAuth();
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrder/${user?.email}`)
+    fetch(`http://localhost:5000/orders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user?.email]);
+  console.log(orders);
 
   // const status = "apporved";
   const handleOrderId = (id) => {
@@ -27,7 +28,7 @@ const {user} = useAuth();
        const proceed = window.confirm('Are you sure, you want to delete?');
        window.location.reload(false);
        if(proceed){
-           const url = `http://localhost:5000/deleteOrder/${id}`;
+           const url = `http://localhost:5000/orders/${id}`;
            fetch(url, {
             method: "DELETE",
            })
@@ -60,10 +61,9 @@ const {user} = useAuth();
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Service Title</th>
-            <th>Event description</th>
-            <th>Image Link</th>
+            <th>Service Id</th>
+            <th>Use Email</th>
+            <th>Address</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -71,10 +71,9 @@ const {user} = useAuth();
         {orders?.map((pd, index) => (
           <tbody>
             <tr>
-              <td>{index}</td>
-              <td>{pd.name}</td>
-              <td>{pd.description}</td>
-              <td>{pd.image}</td>
+              <td>{pd?._id}</td>
+              <td>{pd.email}</td>
+              <td>{pd.address}</td>
               <td>
                 <form className="d-flex" onSubmit={handleSubmit(onSubmit)}>
                   <select

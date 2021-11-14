@@ -6,9 +6,8 @@ import './Menu.css'
 
 const Menu = () => {
     const {user, logout} = useAuth();
-    console.log({user});
     return (
-        <div>
+        <div className="menu-bar">
 
             <Navbar expand="lg">
   <Container>
@@ -18,14 +17,24 @@ const Menu = () => {
       <Nav className="ms-auto top-menu">
         <Link className='text-dark' to="/home">Home</Link>
         <Link className='text-dark' to="/explore">Explore</Link>
-        <Link className='text-dark' to="/login">login</Link>
-        <Link className='text-dark' to="/review">review</Link>
-        <Link className='text-dark' to="/mybooking">My Order</Link>
+        {
+         user.email?(
+          <span>
+           <Link className='text-dark' to="/review">review</Link>
+           <Link className='text-dark' to="/dashboard">DashBoard</Link>
+            <Link className='text-dark' to="/mybooking">My Order</Link>
+             <Link></Link>
+             </span>):(
+               <div></div>
+                )
+                        }
+
         <span className='menu-button'>
         {
             user?.email?
             <Button className="me-2" onClick={logout}>Log Out</Button>:
             <NavLink to="/login"><Button>Login</Button></NavLink>
+            
         }
         <Navbar.Text className='text-dark'>
         Signed in as: <a  href="#login">{user.email}</a>

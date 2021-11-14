@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 const ManageServices = () => {
     const [orders, setOrders] = useState([]);
-    const [control, setControl] = useState(false);
+    const [control, setControl] = useState(true);
     useEffect(() => {
-        fetch("http://localhost:5000/allOrders")
+        fetch("http://localhost:5000/orders")
           .then((res) => res.json())
           .then((data) => setOrders(data));
-      }, []);
+      }, [control]);
       const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
-        window.location.reload(false);
         if(proceed){
-            const url = `http://localhost:5000/deleteOrder/${id}`;
+            const url = `http://localhost:5000/orders/${id}`;
             fetch(url, {
              method: "DELETE",
             })

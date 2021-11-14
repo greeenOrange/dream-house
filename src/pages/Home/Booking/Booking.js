@@ -4,7 +4,6 @@ import './Booking.css'
 import { useHistory, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hook/UseAuth';
-import Menu from '../../Shared/Menu-bar/Menu';
 
 const Booking = () => {
 const {id} = useParams();
@@ -25,7 +24,7 @@ useEffect(()=>{
 const onSubmit = (data) => {
     data.email = user?.email;
     data.status = "pending";
-    fetch("http://localhost:5000/addOrders", {
+    fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -44,7 +43,6 @@ const onSubmit = (data) => {
     return (
             <div>
         <div className="container mt-3">
-        <Menu></Menu>
         <div className="row">
         <div className='col-md-6'>
         <h3>Booking ID: {details?._id}</h3>
@@ -60,8 +58,8 @@ const onSubmit = (data) => {
           <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 {...register("name")}
-                placeholder="name"
-                value={details?.name}
+                placeholder="poject name"
+                defaultValue={details?.name}
                 className="p-2 m-2 w-100 input-field"
               />
               <input
@@ -70,18 +68,16 @@ const onSubmit = (data) => {
                 placeholder="floor size area"
                 className="p-2 m-2 w-100 input-field"
               />
-
               <input
-                {...register("image", { required: true })}
-                placeholder="Image Link"
-                defaultValue={details?.img}
+                {...register("address", { required: true })}
+                placeholder="User Address"
                 className="p-2 m-2 w-100 input-field"
               />
 
               <input
-                {...register("worth", { required: true })}
-                placeholder="worth"
-                defaultValue={details?.worth}
+                {...register("phone", { required: true })}
+                placeholder="User Number"
+                
                 type="text"
                 className="p-2 m-2 w-100 input-field"
               />

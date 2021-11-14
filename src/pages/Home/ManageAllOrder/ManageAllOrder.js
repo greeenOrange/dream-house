@@ -2,31 +2,51 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 
 const ManageAllOrder = () => {
-    const [orders, setOrders] = useState();
+    const [orders, setOrders] = useState([]);
+    const [control, setControl] = useState(true);
 
       useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("http://localhost:5000/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data))
-  }, []);
+  }, [control]);
   
-  const handleDelete = id => {
+//   const handleDelete = id => {
+//     const proceed = window.confirm('Are you sure, you want to delete?');
+//     if (proceed) {
+//         const url = `http://localhost:5000/orders/${id}`;
+//         console.log(url)
+//         fetch(url, {
+//             method: 'DELETE'
+//         })
+//             .then(res => res.json())
+//             .then(data => {
+//                 if (data.deletedCount > 0) {
+//                     alert('deleted successfully');
+//                     const remainingUsers = orders.filter(order => order._id !== id);
+//                     setOrders(remainingUsers);
+//                 }
+//             });
+//     }
+// }
+
+
+const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure, you want to delete?');
-    if (proceed) {
-        const url = `http://localhost:5000/allOrders/${id}`;
+    if(proceed){
+        const url = `http://localhost:5000/orders/${id}`;
         fetch(url, {
-            method: 'DELETE'
+         method: "DELETE",
         })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    alert('deleted successfully');
-                    const remainingUsers = orders.filter(order => order._id !== id);
-                    setOrders(remainingUsers);
-                }
-            });
+        .then((res) => res.json())
+         .then((data) => {
+         if (data.deletedCount) {
+         setControl(!control);
+         }
+   })
     }
-}
+};
+
     return (
         <div>
             <h2>Mange All Orders: {orders?.length}</h2>
@@ -51,7 +71,7 @@ const ManageAllOrder = () => {
             <td>{pd.description}</td>
             <td>{pd.image}</td>
             <td>{pd.status}</td>
-            <button className='btn btn-dark' onClick={() => handleDelete(orders._id)}>Delete</button>
+            <button className='btn btn-dark' onClick={() => handleDelete(pd._id)}>Delete</button>
         </tr>
                 </tbody>
             ))}

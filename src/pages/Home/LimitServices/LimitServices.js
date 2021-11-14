@@ -10,9 +10,8 @@ const LimitServices = () => {
     },[])
     console.log(limitServices);
     return (
-        <div>
-            <h2>limit services {limitServices.length}</h2>
-            <div className="container">
+        <div className="container my-2">
+            <h2 className=" my-3">Property Information</h2>
                 <div className="row">
                 {limitServices?.map((pd, index) => (
                     <div className="col-md-6">
@@ -32,7 +31,7 @@ const LimitServices = () => {
             </div>
           ))}
                 </div>
-            </div>
+
         </div>
     );
 };

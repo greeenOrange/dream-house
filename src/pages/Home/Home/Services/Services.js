@@ -12,7 +12,6 @@ const Services = () => {
     },[])
     return (
         <div className='container my-4'>
-        <Menu></Menu>
         <h1>Property Information</h1>
             <div className="row">
             {

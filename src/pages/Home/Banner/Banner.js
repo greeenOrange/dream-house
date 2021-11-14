@@ -1,13 +1,11 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import Menu from '../../Shared/Menu-bar/Menu';
 import './Banner.css'
 const Banner = () => {
     return (
         <div>
             <div className="banner">
                 <div className="blr">
-                <Menu></Menu>
                     <div className="container">
                         <div className='row'>
                         <div className="col">

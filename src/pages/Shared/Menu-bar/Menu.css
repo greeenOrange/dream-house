@@ -1,3 +1,6 @@
+.menu-bar{
+    background-color: none;
+}
 .top-menu{
     display: flex;
     justify-content: center;

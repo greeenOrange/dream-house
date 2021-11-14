@@ -4,7 +4,6 @@ import { useRouteMatch, Link, Switch, Route, NavLink, } from "react-router-dom";
 import './DashBoard.css'
 
 import useAuth from "../../../../Hook/UseAuth";
-import Review from "../../../Review/Review";
 import MyBooking from "../MyBooking/MyBooking";
 import Admin from "../MakeAdmin/Admin";
 import ManageServices from "../../MangeServices/ManageServices";
@@ -13,6 +12,8 @@ import { Button, Offcanvas } from "react-bootstrap";
 import Pay from "../../Pay/Pay";
 import ManageAllOrder from "../../ManageAllOrder/ManageAllOrder";
 import Menu from "../../../Shared/Menu-bar/Menu";
+import ReviewForm from "../../../ReviewForm/ReviewForm";
+
 
 const Dashbaord = () => {
   const {user, logout} = useAuth();
@@ -37,7 +38,6 @@ const Dashbaord = () => {
   console.log(isAdmin);
   return (
     <div className="container">
-    <Menu></Menu>
     <Button className="d-flex" variant="primary" onClick={handleShow}>
         DashBoard Menu
       </Button>
@@ -60,6 +60,7 @@ const Dashbaord = () => {
               <Link to={`${url}/review`}>
                 <li className="dashboard-menu mt-5">Review</li>
               </Link>
+              
 
               <Link to={`${url}/logout`}>
                 <li className="dashboard-menu mt-5">{
@@ -83,20 +84,19 @@ const Dashbaord = () => {
               <Link to={`${url}/makeAdmin`}>
                 <li className="dashboard-menu mt-5">Admin</li>
               </Link>
-                </span>
-                )}
 
               <Link to={`${url}/manageServices`}>
                 <li className="dashboard-menu mt-5">Manage All Services</li>
               </Link>
+                </span>
+                )}
+
+              
         </Offcanvas.Body>
       </Offcanvas>
       <Switch>
               <Route exact path={`${path}/mybooking`}>
                 <MyBooking></MyBooking>
-              </Route>
-              <Route exact path={`${path}/review`}>
-                <Review></Review>
               </Route>
               <Route exact path={`${path}/pay`}>
                 <Pay></Pay>
@@ -110,6 +110,10 @@ const Dashbaord = () => {
 
               <Route exact path={`${path}/addServices`}>
               <AddServices></AddServices>
+              </Route>
+
+              <Route exact path={`${path}/review`}>
+              <ReviewForm></ReviewForm>
               </Route>
 
               <Route exact path={`${path}/manageServices`}>
