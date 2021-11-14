@@ -5,7 +5,7 @@ import SetReview from '../SetReview/SetReview';
 const ReviewShow = () => {
     const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch("https://glacial-temple-95782.herokuapp.com/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

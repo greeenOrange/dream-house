@@ -14,7 +14,7 @@ const history = useHistory();
 
 
 useEffect(()=>{
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://glacial-temple-95782.herokuapp.com/services/${id}`)
     .then(res => res.json())
     .then(data => {
        setDetails(data)
@@ -24,7 +24,7 @@ useEffect(()=>{
 const onSubmit = (data) => {
     data.email = user?.email;
     data.status = "pending";
-    fetch("http://localhost:5000/orders", {
+    fetch("https://glacial-temple-95782.herokuapp.com/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

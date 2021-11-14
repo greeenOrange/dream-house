@@ -27,7 +27,7 @@ const useFirebase = () => {
     };
 
     const handleUserInfoRegister = (email) =>{
-        fetch("http://localhost:5000/addUserInfo",{
+        fetch("https://glacial-temple-95782.herokuapp.com/addUserInfo",{
             method:"POST",
             headers: {"content-type": "application/json"},
             body: JSON.stringify({email}),

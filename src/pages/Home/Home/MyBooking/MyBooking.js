@@ -13,7 +13,7 @@ const {user} = useAuth();
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user?.email}`)
+    fetch(`https://glacial-temple-95782.herokuapp.com/orders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user?.email]);
@@ -28,7 +28,7 @@ const {user} = useAuth();
        const proceed = window.confirm('Are you sure, you want to delete?');
        window.location.reload(false);
        if(proceed){
-           const url = `http://localhost:5000/orders/${id}`;
+           const url = `https://glacial-temple-95782.herokuapp.com/orders/${id}`;
            fetch(url, {
             method: "DELETE",
            })
@@ -45,7 +45,7 @@ const {user} = useAuth();
 
   const onSubmit = (data) => {
     console.log(data, orderId);
-    fetch(`http://localhost:5000/statusUpdate/${orderId}`, {
+    fetch(`https://glacial-temple-95782.herokuapp.com/statusUpdate/${orderId}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
