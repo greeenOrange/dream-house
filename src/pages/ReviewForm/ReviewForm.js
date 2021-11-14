@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from "sweetalert2";
 import useAuth from '../../Hook/UseAuth';
+import './ReviewForm.css'
 
 const ReviewForm = () => {
   const { user } = useAuth();
@@ -35,20 +36,16 @@ const ReviewForm = () => {
       });
   }
   return (
-    <div
-      className="container-fluid "
-     
-    >
+    <div className='review-form'>
+        <div className="container">
       <h1 className="pt-2 fw-bold" >
         Give your FeedBack
       </h1>
 
       <div className="row mx-auto py-5">
-        <div className="col-md-6 col-sm-12 align-self-center">
-          <img className="img-fluid w-75 rounded-3"  alt="" />
-        </div>
 
-        <div className="col-md-6 col-sm-12">
+
+        <div className="col-md-12">
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
               {...register("name")}
@@ -88,6 +85,7 @@ const ReviewForm = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,3 +1,11 @@
 .login-box{
     width: 100px;
 }
+.submit-btn{
+    color:#dcc397;
+    padding: 1rem;
+    border: none;
+}
+input{
+    border: none;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, Spinner } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
+import './Login.css'
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hook/UseAuth';
 
@@ -22,15 +23,16 @@ const Login = () => {
         e.preventDefault();
     }
     return (
-        <div className='container'>
+        <div className="login-form">
+            <div className='container'>
         <div className="row">
         <h2>Please Login</h2>
             <div className="col-md-6">
             <div className="align-center">
             <form onSubmit={handleLoginSubmit}>
-                <input className="d-block w-100" type="email" placeholder="email" name="email" onChange={handleOnChange} />
-                <input className="d-block w-100" type="password" placeholder="password" name="password" onChange={handleOnChange} />
-                <input className="d-block w-100 my-3" type="submit" />
+                <input className="d-block w-100 p-2 mb-1" type="email" placeholder="email" name="email" onChange={handleOnChange} />
+                <input className="d-block w-100 p-2" type="password" placeholder="password" name="password" onChange={handleOnChange} />
+                <input className="d-block w-100 my-3 submit-btn" type="submit" />
                 <NavLink to="/register">
                     New user? Please Register
                 </NavLink>
@@ -46,6 +48,7 @@ const Login = () => {
             </div>
         </div>
 
+        </div>
         </div>
     );
 };

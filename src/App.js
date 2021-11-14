@@ -33,9 +33,9 @@ function App() {
         <Router>
         <Menu></Menu>
           <Switch>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
             <Dashbaord></Dashbaord>
-            </Route>
+            </PrivateRoute>
             <Route path="/home">
               <Home />
             </Route>
@@ -57,9 +57,9 @@ function App() {
             <PrivateRoute path="/mybooking">
               <MyBooking></MyBooking>
             </PrivateRoute>
-            <Route path="/manageServices">
+            <PrivateRoute path="/manageServices">
               <ManageServices />
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/manageallorders">
               <ManageAllOrder></ManageAllOrder>
             </PrivateRoute>
