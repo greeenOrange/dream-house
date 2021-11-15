@@ -32,7 +32,7 @@ const handleDelete = (id) => {
             <h2>Mange All Orders: {orders?.length}</h2>
             <div className='container'>
             <div className="row">
-                <div className="col-md-8 mx-auto">
+                <div className="col-md-8 col-sm-6 mx-auto">
                 <Table striped bordered hover>
   <thead>
     <tr>
