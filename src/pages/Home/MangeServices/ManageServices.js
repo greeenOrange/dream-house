@@ -4,7 +4,7 @@ const ManageServices = () => {
     const [orders, setOrders] = useState([]);
     const [control, setControl] = useState(true);
     useEffect(() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://glacial-temple-95782.herokuapp.com/services")
           .then((res) => res.json())
           .then((data) => setOrders(data));
       }, [control]);
@@ -13,8 +13,8 @@ const ManageServices = () => {
       const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if(proceed){
-            const url = `http://localhost:5000/services/${id}`;
-            // const url = https://glacial-temple-95782.herokuapp.com/services/${id};
+            // const url = `http://localhost:5000/services/${id}`;
+            const url = `https://glacial-temple-95782.herokuapp.com/services/${id}`
             fetch(url, {
              method: "DELETE",
             })
