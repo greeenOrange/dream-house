@@ -17,7 +17,6 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password, displayName)
             .then((userCredential) => {
-                console.log(userCredential?.user?.displayName);
                 handleUserInfoRegister(userCredential.user.email)
                 setAuthError('');
             })
