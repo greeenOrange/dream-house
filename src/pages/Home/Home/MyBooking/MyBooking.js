@@ -56,44 +56,48 @@ const {user} = useAuth();
 
   return (
     <div className="container">
-      <h1>All orders {orders.length}</h1>
+      <div className="row">
+        <div className="col-md-8 mx-auto">
+        <h1>Your orders {orders.length}</h1>
 
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Service Id</th>
-            <th>Use Email</th>
-            <th>Address</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        {orders?.map((pd, index) => (
-          <tbody>
-            <tr>
-              <td>{pd?._id}</td>
-              <td>{pd.email}</td>
-              <td>{pd.address}</td>
-              <td>
-                <form className="d-flex" onSubmit={handleSubmit(onSubmit)}>
-                  <select
-                    onClick={() => handleOrderId(pd?._id)}
-                    {...register("status")}
-                  >
-                    <option value={pd?.status}>{pd?.status}</option>
-                    <option value="approve">approve</option>
-                    <option value="done">Done</option>
-                  </select>
-                  <input className="btn bg-success p-2" type="submit" />
-                </form>
-              </td>
-              <button
-              onClick={() => handleDelete(pd?._id)} 
-              className="btn bg-danger p-2">Delete</button>
-            </tr>
-          </tbody>
-        ))}
-      </Table>
+<Table striped bordered hover>
+  <thead>
+    <tr>
+      <th>Service Id</th>
+      <th>Use Email</th>
+      <th>Address</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  {orders?.map((pd, index) => (
+    <tbody>
+      <tr>
+        <td>{pd?._id}</td>
+        <td>{pd.email}</td>
+        <td>{pd.address}</td>
+        <td>
+          <form className="d-flex" onSubmit={handleSubmit(onSubmit)}>
+            <select
+              onClick={() => handleOrderId(pd?._id)}
+              {...register("status")}
+            >
+              <option value={pd?.status}>{pd?.status}</option>
+              <option value="approve">approve</option>
+              <option value="done">Done</option>
+            </select>
+            <input className="btn bg-success p-2" type="submit" />
+          </form>
+        </td>
+        <button
+        onClick={() => handleDelete(pd?._id)} 
+        className="btn bg-danger p-2">Delete</button>
+      </tr>
+    </tbody>
+  ))}
+</Table>
+        </div>
+      </div>
     </div>
   );
 };

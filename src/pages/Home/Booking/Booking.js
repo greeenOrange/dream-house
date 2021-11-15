@@ -54,7 +54,7 @@ const onSubmit = (data) => {
     <Link className='btn btn-lg btn-outline-dark' to='/'>go back</Link>
         </div>
       <div className="col-md-6 max-auto">
-      
+      <h2>Enter your Information</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 {...register("name")}

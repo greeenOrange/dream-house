@@ -11,26 +11,6 @@ const ManageAllOrder = () => {
       .then((data) => setOrders(data))
   }, [control]);
   
-//   const handleDelete = id => {
-//     const proceed = window.confirm('Are you sure, you want to delete?');
-//     if (proceed) {
-//         const url = `https://glacial-temple-95782.herokuapp.com/orders/${id}`;
-//         console.log(url)
-//         fetch(url, {
-//             method: 'DELETE'
-//         })
-//             .then(res => res.json())
-//             .then(data => {
-//                 if (data.deletedCount > 0) {
-//                     alert('deleted successfully');
-//                     const remainingUsers = orders.filter(order => order._id !== id);
-//                     setOrders(remainingUsers);
-//                 }
-//             });
-//     }
-// }
-
-
 const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure, you want to delete?');
     if(proceed){
@@ -48,7 +28,7 @@ const handleDelete = (id) => {
 };
 
     return (
-        <div>
+        <div className="">
             <h2>Mange All Orders: {orders?.length}</h2>
             <div className='container'>
             <div className="row">
@@ -56,22 +36,23 @@ const handleDelete = (id) => {
                 <Table striped bordered hover>
   <thead>
     <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
+      <th>Proparty Name</th>
+      <th>User Email</th>
+      <th>Address</th>
+      <th>Status</th>
+      <th>action</th>
     </tr>
   </thead>
 
     {orders?.map((pd, index) => (
                 <tbody>
                 <tr>
-        <td>{index}</td>
+        
          <td>{pd.name}</td>
-            <td>{pd.description}</td>
-            <td>{pd.image}</td>
-            <td>{pd.status}</td>
-            <button className='btn btn-dark' onClick={() => handleDelete(pd._id)}>Delete</button>
+            <td>{pd.email}</td>
+            <td>{pd.address}</td>
+            <td className="text-success">{pd.status}</td>
+            <button className='btn btn-danger' onClick={() => handleDelete(pd._id)}>Delete</button>
         </tr>
                 </tbody>
             ))}

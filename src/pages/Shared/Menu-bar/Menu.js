@@ -6,6 +6,7 @@ import './Menu.css'
 
 const Menu = () => {
     const {user, logout} = useAuth();
+    console.log(user);
     return (
         <div className="menu-bar">
 

@@ -6,8 +6,8 @@ import './Register.css'
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
-    const {user, authError, registerUser, isLoading } = useAuth();
-
+    const {user, authError, registerUser, isLoading, handleGoogleLogin } = useAuth();
+    
     const handleOnChange = e =>{
         const field = e.target.name;
         const value = e.target.value;
@@ -40,6 +40,10 @@ const handleLoginSubmit = e => {
                 <NavLink to="/Login">
                     Alrady Register? Please Login
                 </NavLink>
+                <p>--- or ---</p>
+            <button onClick={handleGoogleLogin} className="btn d-block mx-auto">
+            Google Sign IN
+          </button>
             </form>}
             {isLoading && <Spinner animation="border" />}
             {user?.email && <Alert className="text-success">
@@ -50,6 +54,7 @@ const handleLoginSubmit = e => {
             </Alert>}
             </div>
             </div>
+            <hr />
         </div>
 
         </div>

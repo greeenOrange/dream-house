@@ -52,7 +52,7 @@ const AddServices = () => {
                 <br />
 
                 <input
-                  {...register("image", { required: true })}
+                  {...register("img", { required: true })}
                   placeholder="Image Link"
                   className="p-2 m-2"
                   className="p-2 m-2 w-100"
@@ -61,7 +61,7 @@ const AddServices = () => {
                 <input
                   {...register("worth", { required: true })}
                   placeholder="worth"
-                  type="number"
+                  type="text"
                   className="p-2 m-2"
                   className="p-2 m-2 w-100"
                 />

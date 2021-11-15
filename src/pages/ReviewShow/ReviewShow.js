@@ -12,7 +12,7 @@ const ReviewShow = () => {
     return (
         <Container className="mt-5">
       <div>
-        <h1 className="text-center mb-5 text-info">TESTIMONIAL</h1>
+        <h1 className="text-center mb-5">What Client Say About Us</h1>
       </div>
 
       <div className="row">
