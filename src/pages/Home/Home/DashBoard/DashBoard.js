@@ -38,7 +38,7 @@ const Dashbaord = () => {
   console.log(isAdmin);
   return (
     <div className="container">
-    <Button className="d-flex" variant="primary" onClick={handleShow}>
+    <Button className="d-flex" variant="success" onClick={handleShow}>
         DashBoard Menu
       </Button>
 
