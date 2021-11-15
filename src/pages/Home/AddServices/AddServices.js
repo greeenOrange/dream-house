@@ -23,12 +23,11 @@ const AddServices = () => {
     console.log(data);
   };
   return (
-    <div>
-      <div>
-        <h1 className="mt-5 text-center text-info">Please Add Services</h1>
-        <div className="login-box w-25 m-auto mt-5">
-          <div className="event-box border border d-flex justify-content-center align-items-center">
-            <div className="login-form">
+    <div className="login-form">
+      <div className="row container">
+        <h1 className="mt-5 text-center">Please Add Services</h1>
+        <div className="col-md-8 mx-auto">
+
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   {...register("name")}
@@ -72,11 +71,9 @@ const AddServices = () => {
                 <input
                   type="submit"
                   value="Add"
-                  className="btn btn-info w-50"
+                  className="btn btn-primary w-50"
                 />
               </form>
-            </div>
-          </div>
         </div>
       </div>
     </div>
