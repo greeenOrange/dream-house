@@ -13,7 +13,7 @@ const {user} = useAuth();
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`https://glacial-temple-95782.herokuapp.com/orders/${user?.email}`)
+    fetch(`https://dream-house-server.up.railway.app/orders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user?.email]);
@@ -28,7 +28,7 @@ const {user} = useAuth();
        const proceed = window.confirm('Are you sure, you want to delete?');
        window.location.reload(false);
        if(proceed){
-           const url = `https://glacial-temple-95782.herokuapp.com/orders/${id}`;
+           const url = `https://dream-house-server.up.railway.app/orders/${id}`;
            fetch(url, {
             method: "DELETE",
            })
@@ -45,7 +45,7 @@ const {user} = useAuth();
 
   const onSubmit = (data) => {
     console.log(data, orderId);
-    fetch(`https://glacial-temple-95782.herokuapp.com/statusUpdate/${orderId}`, {
+    fetch(`https://dream-house-server.up.railway.app/statusUpdate/${orderId}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

@@ -9,7 +9,7 @@ const Admin = () => {
     const { register, handleSubmit, watch, errors } = useForm();
 
     const onSubmit = (data) => {
-        fetch("https://glacial-temple-95782.herokuapp.com/makeAdmin", {
+        fetch("https://dream-house-server.up.railway.app/makeAdmin", {
           method: "PUT",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(data),

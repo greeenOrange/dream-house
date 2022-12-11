@@ -38,7 +38,7 @@ const useFirebase = () => {
       };
 
     const handleUserInfoRegister = (email, displayName) =>{
-        fetch("https://glacial-temple-95782.herokuapp.com/addUserInfo",{
+        fetch("https://dream-house-server.up.railway.app/addUserInfo",{
             method:"POST",
             headers: {"content-type": "application/json"},
             body: JSON.stringify({email, displayName}),

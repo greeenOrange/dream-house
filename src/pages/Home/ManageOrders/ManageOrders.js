@@ -5,7 +5,7 @@
 //     const [orders, setOrders] = useState([]);
 
 //   // useEffect(() => {
-//   //   fetch("https://glacial-temple-95782.herokuapp.com/allOrders")
+//   //   fetch("https://dream-house-server.up.railway.app/allOrders")
 //   //     .then((res) => res.json())
 //   //     .then((data) => setOrders(data));
 //   // }, []);

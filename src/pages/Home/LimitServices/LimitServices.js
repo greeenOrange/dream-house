@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const LimitServices = () => {
     const [limitServices, setlimitServices] = useState([]);
     useEffect(()=>{
-        fetch('https://glacial-temple-95782.herokuapp.com/productsLimit')
+        fetch('https://dream-house-server.up.railway.app/productsLimit')
         .then(res => res.json())
         .then(data => setlimitServices(data))
     },[])

@@ -6,7 +6,7 @@ const ManageAllOrder = () => {
     const [control, setControl] = useState(true);
 
       useEffect(() => {
-    fetch("https://glacial-temple-95782.herokuapp.com/orders")
+    fetch("https://dream-house-server.up.railway.app/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data))
   }, [control]);
@@ -14,7 +14,7 @@ const ManageAllOrder = () => {
 const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure, you want to delete?');
     if(proceed){
-        const url = `https://glacial-temple-95782.herokuapp.com/orders/${id}`;
+        const url = `https://dream-house-server.up.railway.app/orders/${id}`;
         fetch(url, {
          method: "DELETE",
         })

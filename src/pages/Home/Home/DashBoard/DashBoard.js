@@ -25,7 +25,7 @@ const Dashbaord = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    fetch(`https://glacial-temple-95782.herokuapp.com/checkAdmin/${user?.email}`)
+    fetch(`https://dream-house-server.up.railway.app/checkAdmin/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data[0]?.role === "admin") {

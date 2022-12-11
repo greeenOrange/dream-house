@@ -14,7 +14,7 @@ const ReviewForm = () => {
     
   } = useForm();
   const onSubmit = (data) => {
-    fetch("https://glacial-temple-95782.herokuapp.com/review", {
+    fetch("https://dream-house-server.up.railway.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

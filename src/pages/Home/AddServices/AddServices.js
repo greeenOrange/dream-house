@@ -13,7 +13,7 @@ const AddServices = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("https://glacial-temple-95782.herokuapp.com/addServices", {
+    fetch("https://dream-house-server.up.railway.app/addServices", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
